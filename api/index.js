@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 8000
 const postRouter = require('./src/routers/post.router')
 const commentRouter = require('./src/routers/comment.router')
 const bookingRouter = require('./src/routers/booking.router')
+const shopRouter = require('./src/routers/shop.router')
 
 // Connect to MongoDB
 mongoConnect()
@@ -27,6 +28,7 @@ app.use(express.json())
 app.use('/api', postRouter)
 app.use('/api', commentRouter)
 app.use('/api', bookingRouter)
+app.use('/api', shopRouter)
 
 
 app.listen(PORT, () => {

@@ -38,6 +38,10 @@ const PostSchema = new Schema({
     isAvailable: {
         type: Boolean,
         default: true
+    },
+    shop: {
+        type: Schema.Types.ObjectId,
+        ref: 'Shop'
     }
 })
 

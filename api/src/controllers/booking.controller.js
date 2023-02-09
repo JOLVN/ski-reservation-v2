@@ -1,5 +1,6 @@
 const BookingModel = require('../models/booking.model');
 const PostModel = require('../models/post.model');
+const ShopModel = require('../models/shop.model');
 
 const BookingController = {
     getAllBookings: async (req, res) => {
@@ -26,6 +27,9 @@ const BookingController = {
             post.bookings.push(newBooking._id)
             post.isAvailable = false
             await post.save()
+            const shop = await ShopModel.findById(newBooking.shop)
+            shop.bookings.push(newBooking._id)
+            await shop.save()
             res.send(newBooking);
         } catch (error) {
             res.status(400).send({ message: error.message })
@@ -34,7 +38,7 @@ const BookingController = {
     update: async (req, res) => {
         try {
             const booking = await BookingModel.findByIdAndUpdate(req.params.id, req.body)
-            res.send(booking);
+            res.send(booking)
         } catch (error) {
             res.status(404).send({ message: error.message })
         }

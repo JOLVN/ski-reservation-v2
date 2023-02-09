@@ -1,4 +1,5 @@
 const PostModel = require('../models/post.model')
+const ShopModel = require('../models/shop.model')
 
 const PostController = {
     getAllPosts: async (req, res) => {
@@ -19,9 +20,12 @@ const PostController = {
     },
     create: async (req, res) => {
         try {
-            const newPost = new PostModel(req.body);
-            await newPost.save();
-            res.send(newPost);
+            const newPost = new PostModel(req.body)
+            await newPost.save()
+            const shop = await ShopModel.findById(req.body.shop)
+            shop.posts.push(newPost._id)
+            await shop.save()
+            res.send(newPost)
         } catch (error) {
             res.status(400).send({ message: error.message })
         }
@@ -29,7 +33,7 @@ const PostController = {
     update: async (req, res) => {
         try {
             const post = await PostModel.findByIdAndUpdate(req.params.id, req.body);
-            res.send(post);
+            res.send(post)
         } catch (error) {
             res.status(404).send({ message: error.message })
         }
