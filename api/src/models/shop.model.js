@@ -25,7 +25,7 @@ const ShopSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    addresse: {
+    address: {
         type: String,
         required: true
     },
