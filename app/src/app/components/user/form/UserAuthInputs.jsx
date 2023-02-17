@@ -1,17 +1,23 @@
-import { FormGroup, TextField } from "@mui/material"
+import { Box, FormGroup, TextField } from "@mui/material"
 
 const UserAuthInputs = () => {
     return (
         <>
             <FormGroup>
-                <TextField
-                    label='Email'
-                    variant='outlined'
-                />
-                <TextField
-                    label='Password'
-                    variant='outlined'
-                />
+                <Box my={2}>
+                    <TextField
+                        sx={{ width: '100%' }}
+                        label='Email'
+                        variant='outlined'
+                    />
+                </Box>
+                <Box my={2}>
+                    <TextField
+                        sx={{ width: '100%' }}
+                        label='Password'
+                        variant='outlined'
+                    />
+                </Box>
             </FormGroup>
         </>
     )

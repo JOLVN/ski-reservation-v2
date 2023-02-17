@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material"
+import { style } from "@mui/system"
 import { Link } from "react-router-dom"
 
 const NavbarItem = ({ path, label }) => {

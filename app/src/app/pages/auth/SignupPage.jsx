@@ -4,11 +4,7 @@ import { Box, Typography } from "@mui/material"
 const SignupPage = () => {
     return (
         <Box>
-            <Typography
-                variant='h1'
-            >
-                Signup Page
-            </Typography>
+            <h1>Signup</h1>
 
             <SignupForm />
 

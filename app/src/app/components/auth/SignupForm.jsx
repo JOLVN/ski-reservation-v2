@@ -8,10 +8,13 @@ const SignupForm = () => {
             <UserAuthInputs />
 
             <FormGroup>
-                <TextField
-                    label='Confirm Password'
-                    variant='outlined'
-                />
+                <Box my={2}>
+                    <TextField
+                        sx={{ width: '100%' }}
+                        label='Confirm Password'
+                        variant='outlined'
+                    />
+                </Box>
             </FormGroup>
 
             <Button

@@ -4,9 +4,14 @@ import NavbarMain from "../components/ui/NavbarMain"
 
 const MainLayout = ({ children }) => {
     return (
-        <Box>
-            <Container maxWidth="sm">
-                <NavbarMain></NavbarMain>
+        <Box sx={{
+            backgroundColor: '#333',
+            color: '#fff',
+            minHeight: '100vh',
+            margin: 0,
+        }}>
+            <NavbarMain></NavbarMain>
+            <Container>
                 {children}
             </Container>
         </Box>

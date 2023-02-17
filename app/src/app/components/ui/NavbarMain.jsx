@@ -7,6 +7,14 @@ const ConfigNavbarItems = [
         label: 'Home'
     },
     {
+        path: '/shops',
+        label: 'Shops'
+    },
+    {
+        path: '/bookings',
+        label: 'Bookings'
+    },
+    {
         path: '/auth/signin',
         label: 'Signin'
     },
@@ -24,7 +32,8 @@ const NavbarMain = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                p: 2
+                p: 2,
+                backgroundColor: '#222',
             }}
         >
             {ConfigNavbarItems.map((item, index) => (

@@ -1,15 +1,13 @@
 import SigninForm from "../../components/auth/SigninForm"
 
-const { Box, Typography, FormGroup, TextField } = require("@mui/material")
+const { Box } = require("@mui/material")
 
 const SigninPage = () => {
+
     return (
         <Box>
-            <Typography
-                variant='h1'
-            >
-                Signin Page
-            </Typography>
+
+            <h1>Signin</h1>
 
             <SigninForm />
 

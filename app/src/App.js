@@ -6,8 +6,9 @@ import MainLayout from './app/layouts/MainLayout'
 
 const primaryTheme = createTheme({
   palette: {
+    mode: 'dark',
     primary: {
-      main: '#ff9800',
+      main: '#52d1f4',
     },
   },
   components: {

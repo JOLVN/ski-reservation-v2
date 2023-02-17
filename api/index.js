@@ -11,6 +11,7 @@ const postRouter = require('./src/routers/post.router')
 const commentRouter = require('./src/routers/comment.router')
 const bookingRouter = require('./src/routers/booking.router')
 const shopRouter = require('./src/routers/shop.router')
+const authRouter = require('./src/routers/auth.router')
 
 // Connect to MongoDB
 mongoConnect()
@@ -29,6 +30,7 @@ app.use('/api', postRouter)
 app.use('/api', commentRouter)
 app.use('/api', bookingRouter)
 app.use('/api', shopRouter)
+app.use('/api/auth', authRouter)
 
 
 app.listen(PORT, () => {
